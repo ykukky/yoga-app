@@ -49,11 +49,8 @@ def upload_file():
 
     return render_template("index.html",answer="")
 
-# 識別できるフランス菓子の種類（別ウインドウ）
-@app.route('/templates/c_type.html')
-def c_type():
-    return render_template('c_type.html')
-
+# if __name__ == "__main__":
+#     app.run()
 if __name__ == "__main__":
-    app.run()
-   
+    port = int(os.environ.get('PORT', 8080))
+    app.run(host ='0.0.0.0',port = port)   
