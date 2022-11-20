@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='ja'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content="device-width, initial-scale=1.0">
+    <meta http-equiv='X-UA-Compatible' content="ie=edge">
+    <title>YOGAのポーズ識別アプリ（5種類対応）</title>
+    <link rel='stylesheet' href="./static/stylesheet.css">
+</head>
+
+</body>
+    <header>   
+        <div>
+            <a class='home' href="{{url_for('upload_file')}}">
+                リセット
+            </a>
+            <a class='variety' href="{{url_for('c_type')}}" onClick="window.open('./templates/c_type.html','windowname','scrollbars=yes,width=550,height=450'); return false;">
+            識別できるYOGAのポーズ    
+            </a>
+        </div>
+    </header>
+
+
+    <div class='main'> 
+        <img class="title" src="./static/pic/top_img.jpg">
+
+        <h2> AIがYOGAのポーズをお答えします</h2>
+        <p class='img_send'>画像を送信してください</p>
+        <form method='POST' enctype="multipart/form-data">
+            <input class='file_choose' type="file" name="file">
+            <input class='btn' value="送信" type="submit">
+        </form>
+
+        <h3 class='answer'>{{answer}}</h3>
+    </div>
+
+    <footer>
+        <small>&copy; 2022 Y.KUKIMOTO</small>   
+    </footer>
+</body>
+</html>
